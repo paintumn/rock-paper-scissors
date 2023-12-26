@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cart Quantity</title>
+  </head>
+  <body>
+    <button onclick="
+      const userSaidThis = console.log(`Cart quantity: ${cartQuantity}`);
+    ">Show Quantity</button>
+
+    <button onclick="
+      updateCartQuantity(1);
+    ">Add to Cart</button>
+
+    <button onclick="
+      updateCartQuantity(2);
+    ">+2</button>
+
+    <button onclick="
+      updateCartQuantity(3);
+    ">+3</button>
+
+    <button onclick="
+      updateCartQuantity(4);
+    ">+4</button>
+
+    <button onclick="
+      updateCartQuantity(5);
+    ">+5</button>
+
+    <button onclick="
+      updateCartQuantity(-1);
+    ">Remove from cart</button>
+
+    <button onclick="
+      updateCartQuantity(-2);
+    ">-2</button>
+
+    <button onclick="
+      updateCartQuantity(-3);
+    ">-3</button>
+
+    <button onclick="
+      cartQuantity = 0;
+      console.log('Cart was reset.');
+      console.log(`Cart quantity: ${cartQuantity}`);
+      textZone();
+      displayQuantity();
+    ">Reset Cart</button>
+
+    <p id="js-cart-quantity-display"></p>
+
+    <script>
+
+
+
+      function textZone() {
+        const cartOutcome = (`Cart quantity: ${cartQuantity}`);
+
+        const typography = document.getElementById("js-cart-quantity-display")
+        .innerHTML = cartOutcome;
+        
+       displayQuantity();
+
+
+      }
+
+
+
+
+      
+
+      let cartQuantity = 0;
+
+      displayQuantity();
+
+      function updateCartQuantity(change) {
+        if (cartQuantity + change > 10) {
+          alert('The cart is full');
+          return;
+        }
+
+        if (cartQuantity + change < 0) {
+          alert('Not enough items in the cart');
+          return;
+        }
+
+        cartQuantity += change;
+        console.log(`Cart quantity: ${cartQuantity}`);
+        textZone();
+
+        displayQuantity();
+      }
+
+
+      function displayQuantity(){
+        const printOut = document.getElementById('js-cart-quantity-display')
+        .innerHTML = (`Cart quantity: ${cartQuantity}`);
+
+      }
+    </script>
+  </body>
+</html>

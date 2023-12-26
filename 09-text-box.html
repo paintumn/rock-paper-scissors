@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM Projects 2</title>
+  </head>
+  <body>
+    <input id="js-name" placeholder="Name" onkeydown="
+      enterToSubmit();
+      "> 
+    <button class="js-submit-button" onclick=" 
+      whoYou();
+    ">Submit</button>
+    <p id="js-yourName"></p>
+    <script>
+      
+
+      function enterToSubmit() {
+        if(event.key === 'Enter'){
+          whoYou();
+
+        }
+
+      }
+
+
+      function whoYou(){
+        //grabs input from line 7
+        let title = document.getElementById("js-name");
+        let titleValue = title.value;
+        
+        //puts the text in <p> value line 11
+        let namePlace = document.getElementById("js-yourName")
+        //goes into the part of the object that is text and makes it equal to user input
+        namePlace.innerHTML = titleValue; 
+          console.log(titleValue);
+     }
+
+    </script>
+  </body>
+</html>

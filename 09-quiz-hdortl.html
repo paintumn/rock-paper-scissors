@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM Projects 2</title>
+  </head>
+  <body>
+    <button class="button" onclick="
+      sideOfCoin('heads');
+      ">heads</button>
+    <button class="button2" onclick="
+      sideOfCoin('tails')
+    ">tails</button>
+    <button class="reset" onclick="
+      sideOfCoin('reset')
+      ">Reset</button>
+    <p class="choice"></p>
+    <script>
+
+      const heads = document.querySelector('.button').innerHTML;
+      const tails = document.querySelector('.button2').innerHTML;
+
+      function sideOfCoin(decision){
+        if(decision === 'heads'){
+          document.querySelector('.choice')
+            .innerHTML = 'You chose: heads';
+        } else if (decision === 'tails'){
+            document.querySelector('.choice')
+              .innerHTML = 'You chose: tails';
+        } else if (decision === 'reset') {
+            document.querySelector('.choice')
+              .innerHTML = '';
+        }
+      }
+    
+
+    </script>
+  </body>
+</html>
